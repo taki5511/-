@@ -1,6 +1,6 @@
 　  <x-app-layout>
 　      <link rel="stylesheet" href={{asset('css/index.css')}}>
-　      <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+　       <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
         <x-slot name="header">>
             勉強記録
         </x-slot>
