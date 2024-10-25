@@ -21,7 +21,9 @@
                        <x-nav-link :href="route('diary_index')" :active="request()->routeIs('diary_index')">
                         {{ __('日記') }}
                     </x-nav-link>
-                </div>
+                    <x-nav-link :href="route('test_index')" :active="request()->routeIs('test_index')">
+                        {{ __('テスト') }}
+                    </x-nav-link>
             </div>
 
             <!-- Settings Dropdown -->

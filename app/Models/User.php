@@ -52,4 +52,9 @@ class User extends Authenticatable
         {
             return $this->hasMany(Diary::class);  
         }
+        
+        public function tests()   
+        {
+            return $this->hasMany(Test::class);  
+        }
 }

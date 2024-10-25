@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DiaryController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -47,7 +48,17 @@ Route::controller(DiaryController::class)->middleware(['auth'])->group(function(
     
 });
 
-
+Route::controller(TestController::class)->middleware(['auth'])->group(function(){
+    Route::get('/test','index')->name('test_index');
+    Route::post('/tests', 'store')->name('test_store');
+    Route::get('/tests/title', 'title')->name('test_title');
+    Route::get('tests/create', 'create')->name('test_create');
+    Route::get('/tests/{test}', 'show')->name('test_show');
+    Route::put('/tests/{test}', 'update')->name('test_update');
+    Route::delete('/tests/{test}','delete')->name('test_delete');
+    Route::get('tests/{test}/edit', 'edit')->name('test_edit');
+    Route::get('tests/{test}/answer', 'answer')->name('test_answer');
+});
 
 Route::get('/categories/{category}', [CategoryController::class,'index'])->middleware("auth");
 
